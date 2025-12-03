@@ -87,9 +87,6 @@
 </div>
 </div>
 </nav>
- 
-
-        <br>
 
         <!-- Heading -->
         <h1 style="text-align:center;">Renewable Energy and Technology</h1>
@@ -103,28 +100,55 @@
 			<img src="trees.jpg" class="rounded small-img" alt="trees">
         </div>
 
-        <div class="dropdown-section">
-            <div class="dropdown-box">
-                <select><option>Category 1</option></select>
-            </div>
-
-            <div class="dropdown-box">
-                <select><option>Category 2</option></select>
-            </div>
-
-            <div class="dropdown-box">
-                <select><option>Category 3</option></select>
-            </div>
-        </div>
-
         <div style="text-align: center;">
             <p>Renewable energy comes from natural sources that are constantly replenished, such as sunlight, wind, water, and geothermal heat. Unlike fossil fuels, these resources don’t run out and produce far less pollution, making them a cleaner and more sustainable choice for powering our world. By investing in renewable energy, we can reduce greenhouse gas emissions, protect the environment, and create a more secure and reliable energy future.</p>
         </div>
 
-    </div>
+    
+<!-- Validation Form -->
+<div class="container mt-4 mb-5">
+    <h3 class="text-center">Contact & Feedback</h3>
+    <form id="energyForm" class="mx-auto" style="max-width: 600px;" novalidate>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+        <div class="mb-3">
+            <label class="form-label">Full Name</label>
+            <input type="text" class="form-control" id="name" required>
+            <div class="invalid-feedback">Please enter your name.</div>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Email Address</label>
+            <input type="email" class="form-control" id="email" required>
+            <div class="invalid-feedback">Enter a valid email address.</div>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Message</label>
+            <textarea class="form-control" id="message" rows="3" required></textarea>
+            <div class="invalid-feedback">Please write a message.</div>
+        </div>
+
+        <button type="submit" class="btn btn-success w-100">Submit</button>
+    </form>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- JS Validation Script -->
+<script>
+(function () {
+    const form = document.getElementById('energyForm');
+
+    form.addEventListener('submit', function (event) {
+        if (!form.checkValidity()) {
+            event.preventDefault();
+            event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+    });
+})();
+</script>
 
 </body>
 </html>
